@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>豆瓣电影 Top250</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 20px; background-color: #f8f9fa; }
+    h1 { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">豆瓣电影 Top250</h1>
+    <table class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>排名</th>
+          <th>电影名称</th>
+          <th>上映年份</th>
+          <th>评分</th>
+          <th>评分人数</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% movies.forEach((movie, index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= movie.name %></td>
+            <td><%= movie.year %></td>
+            <td><%= movie.rating %></td>
+            <td><%= movie.votes.toLocaleString() %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
